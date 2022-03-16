@@ -2,13 +2,13 @@ const path = require('path')
 
 const { app, BrowserWindow } = require('electron')
 const isDev = require('electron-is-dev')
-
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1000,
+    height: 750,
     webPreferences: {
-      nodeIntegration: true,
+      contextIsolation: false,
+      nodeIntegration: true
     },
   })
 
@@ -23,6 +23,7 @@ function createWindow() {
 }
 
 app.whenReady().then(createWindow);
+
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
