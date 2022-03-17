@@ -1,10 +1,13 @@
-import './App.css';
-import { MojangAccount } from 'minecraft-auth';
+import ReactDOM from 'react-dom';
+import Login from './Login';
+import { useEffect } from 'react';
 
-//const remote = window.require('@electron/remote');
-
-function App() {
-  const account = new MojangAccount()
+const App = () => {
+  useEffect(() => {
+    if (localStorage.getItem('token') === null) {
+      ReactDOM.render(<Login />, document.getElementById('root'))
+    }
+  })
   return (
     <div className='bg-slate-800 h-screen'>
       <div className='relative text-center bg-white'>
