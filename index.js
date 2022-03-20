@@ -41,7 +41,7 @@ ipcMain.handle('play', async (_, auth, version) => {
     clientPackage: null,
 
     authorization: auth,
-    root: '/Users/kimjioo/Library/Application Support/minecraft',
+    root: process.env.FABULOUS_MCROOT,
     version: {
       number: '1.17.1',
       type: 'release'
