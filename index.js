@@ -43,7 +43,7 @@ ipcMain.handle('play', async (_, auth, version) => {
     authorization: auth,
     root: process.env.FABULOUS_MCROOT,
     version: {
-      number: '1.17.1',
+      number: version,
       type: 'release'
     },
 
