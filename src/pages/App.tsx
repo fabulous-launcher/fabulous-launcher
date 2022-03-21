@@ -39,7 +39,7 @@ const App = () => {
         <div className='w-screen h-10 leading-10'>
           <div className='flex flex-row'>
             <p className='w-full'>
-              <img src={`https://crafatar.com/avatars/${account.uuid}`} alt='your mc skin head' className='inline w-[16px] h-[16px]'></img> {account.name}
+              <img src={`https://crafatar.com/avatars/${account.uuid}?overlay=true`} alt='your mc skin head' className='inline w-[16px] h-[16px]'></img> {account.name}
             </p>
           </div>
         </div>
