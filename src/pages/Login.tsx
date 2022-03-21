@@ -18,12 +18,16 @@ const Login = () => {
 
   const renderApp = () => ReactDOM.render(<App />, document.getElementById('root'))
 
-  const handleMojangLogin = () => {
+  const handleMojangLogin = async () => {
     const email = emailInput.current?.value
     const pw = pwInput.current?.value
     
     localStorage.setItem('accType', 'mojang')
-    localStorage.setItem('account', JSON.stringify(Authenticator.getAuth(email, pw)))
+    const auth = await Authenticator.getAuth(email, pw)
+
+    if (!auth) return
+
+    localStorage.setItem('account', JSON.stringify(auth))
     renderApp()
   }
 
